@@ -1,3 +1,9 @@
 .chart-box {
+  margin: auto;
   max-width: 800px;
+}
+
+#average {
+  margin-top: 30px;
+  text-align: center;
 }

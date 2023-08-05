@@ -6,6 +6,8 @@ const ratings = [
   { stars: 5, count: 520 },
 ];
 
+const maxCount = Math.max(...ratings.map((item) => item.count));
+
 /* 별점 평균 표시하는 부분 */
 const totalStars = ratings.reduce(
   (acc, curr) => acc + curr.stars * curr.count,
@@ -28,6 +30,12 @@ new Chart(ctx, {
         label: '별점 분포',
         data: ratings.map((item) => item.count),
         borderWidth: 1,
+        backgroundColor: ratings.map((item) =>
+          item.count === maxCount ? '#fcce03' : '#fcdb03'
+        ),
+        borderColor: '#fcba03',
+        barPercentage: 1,
+        categoryPercentage: 1,
       },
     ],
   },
